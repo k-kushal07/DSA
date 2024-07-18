@@ -26,4 +26,4 @@ def is_palindrome(num):
     return original_num == reversed_num
         
 inp = int(input("Enter a positive number: "))
-print(f"Is the number {inp} palindrome?", is_palindrome(num))
+print(f"Is the number {inp} palindrome?", is_palindrome(inp))

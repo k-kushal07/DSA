@@ -7,7 +7,6 @@ and False otherwise.
 """
 """
 Input:
-An integer n
 12321
 Output:
 Boolean representing whether the provided number is palidrome or not.
@@ -18,4 +17,4 @@ def is_palindrome(num):
     return num == num[::-1]
         
 inp = int(input("Enter a positive number: "))
-print(f"Is the number {inp} palindrome?", is_palindrome(num))
+print(f"Is the number {inp} palindrome?", is_palindrome(inp))
