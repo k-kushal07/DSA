@@ -10,12 +10,9 @@ Output:
 An integer representing the number of digits in n.
 """
 
-# Solution 1
 inp = input("Enter a positive integer: ")
 print(f"Count of digits in number {inp} is: ", len(inp))
 
-
-# Solution 2
 def count_digits(num):
     count = 0
     while num > 0:
