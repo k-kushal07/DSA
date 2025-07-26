@@ -31,4 +31,5 @@ Complexity:
     Average Case: O(n^2)   (Random order)
     Worst Case: O(n^2)     (Reverse sorted list)
     Space Complexity: O(1) (In-place sorting)
+    Stable: Yes
 """
