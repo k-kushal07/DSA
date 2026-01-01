@@ -1,0 +1,51 @@
+"""
+Question:
+Write a Python function to perform Quick Sort using the Lomuto partition scheme.
+Lomuto partition selects the last element as pivot and places it at its correct position,
+with smaller elements on the left and larger on the right.
+"""
+"""
+Input:
+A list of integers.
+Output:
+The sorted list (in-place sorting).
+"""
+
+# Lomuto Partition Function
+def lomuto_partition(arr, low, high):
+    pivot = arr[high]         # Choose last element as pivot
+    i = low - 1               # Index for smaller elements
+
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]  # Swap to move element to correct side
+
+    # Place pivot in correct position
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1              # Return pivot index
+
+
+# Quick Sort using Lomuto partition
+def quick_sort(arr, low, high):
+    if low < high:
+        p = lomuto_partition(arr, low, high)  # Partition index
+        quick_sort(arr, low, p - 1)           # Sort left of pivot
+        quick_sort(arr, p + 1, high)          # Sort right of pivot
+
+
+# Input
+arr = list(map(int, input("Enter the array: ").split()))
+quick_sort(arr, 0, len(arr) - 1)
+
+# Output
+print("Sorted array:", arr)
+
+"""
+Time Complexity:
+Best Case: O(n log n)   (Balanced partitions)
+Average Case: O(n log n)
+Worst Case: O(n^2)      (Already sorted or reverse sorted → worst partitions)
+
+Space Complexity: O(log n) recursive stack
+"""
